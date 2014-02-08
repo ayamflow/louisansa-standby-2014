@@ -1,0 +1,16 @@
+// Colors
+$header-color: #F3F3F3;
+$content-color: #292626;
+$separator-color: #333030;
+$bar-color: #6FAAE1;
+$text-color: #3B3838;
+$highlight-color: #545050;
+
+// Sizes
+$header-height: (150 / 400) * 100%;
+$content-height: (250 / 400) * 100%;
+$bar-height: (10 / 400) * 100vh;
+
+// Layouts
+$tablet-bp: new-breakpoint(max-width 64em); // 1024px
+$one-column-bp: new-breakpoint(max-width 53em); // ~850px

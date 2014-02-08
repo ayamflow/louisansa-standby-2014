@@ -1,0 +1,66 @@
+header {
+    background-color: $header-color;
+    overflow: hidden;
+}
+
+section {
+    box-sizing: border-box;
+    background-color: $content-color;
+    color: $text-color;
+    position: relative;
+
+    h2 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 40px;
+
+        @include media($tablet-bp) {
+            font-size: 30px;
+        }
+
+        @include media($one-column-bp) {
+            text-align: center;
+        }
+    }
+
+    p, a, p a {
+        font-size: 26px;
+        margin: 0.2em 0;
+
+        @include media($tablet-bp) {
+            font-size: 21px;
+        }
+
+        @include media($one-column-bp) {
+            text-align: center;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $text-color;
+        @include transition(color 0.4s ease-out);
+
+        &:visited {
+            color: $text-color;
+        }
+        &:hover {
+            color: $highlight-color;
+        }
+
+        @include media($one-column-bp) {
+            color: $highlight-color;
+            &:visited {
+                color: $highlight-color;
+            }
+        }
+    }
+
+    &:nth-of-type(2) {
+        border-left: 1px solid $separator-color;
+    }
+
+    &:before {
+        background-color: $bar-color;
+    }
+}
