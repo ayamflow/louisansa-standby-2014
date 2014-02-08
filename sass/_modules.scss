@@ -5,11 +5,20 @@ header {
     img {
         opacity: 0;
         @include transition(opacity 1.5s ease-in-out);
+        @include animation(intro 2s ease-in-out);
+        @include animation-delay(5s);
+        @include animation-play-state(running);
     }
 }
 
-.ready img {
-    opacity: 1;
+@keyframes intro {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 section {
@@ -21,10 +30,10 @@ section {
     h2 {
         font-weight: bold;
         margin-top: 0;
-        font-size: 40px;
+        font-size: 32px;
 
         @include media($tablet-bp) {
-            font-size: 30px;
+            font-size: 24px;
         }
 
         @include media($one-column-bp) {
@@ -33,11 +42,11 @@ section {
     }
 
     p, a, p a {
-        font-size: 26px;
-        margin: 0.2em 0;
+        font-size: 21px;
+        margin: 8px 0;
 
         @include media($tablet-bp) {
-            font-size: 21px;
+            font-size: 18px;
         }
 
         @include media($one-column-bp) {

@@ -7,7 +7,7 @@ header {
     }
 
     img {
-        width: 100%;
+        width: 80%;
         min-width: 650px;
     }
 }
@@ -17,10 +17,12 @@ section {
     height: $content-height;
     float: left;
 
-    &:nth-of-type(2):after {
-        content: "";
-        display: block;
-        clear: both;
+    &:nth-of-type(2) {
+        :after {
+            content: "";
+            display: block;
+            clear: both;
+        }
     }
 
     @include media($one-column-bp) {
@@ -48,7 +50,7 @@ section {
         position: absolute;
         top: 0;
         left: 0;
-        @include transition(height 0.4s ease-out);
+        @include transition(height 0.4s cubic-bezier(0.075, 0.82, 0.165, 1));
 
         @include media($one-column-bp) {
             height: $bar-height;
@@ -57,6 +59,12 @@ section {
 
     &:hover:before {
         height: $bar-height;
+    }
+
+    :before {
+        @include media($one-column-bp) {
+            display: none;
+        }
     }
 }
 
