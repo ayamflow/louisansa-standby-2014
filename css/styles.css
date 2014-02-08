@@ -173,6 +173,16 @@ header {
   background-color: #f3f3f3;
   overflow: hidden;
 }
+header img {
+  opacity: 0;
+  -webkit-transition: opacity 1.5s ease-in-out;
+  -moz-transition: opacity 1.5s ease-in-out;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.ready img {
+  opacity: 1;
+}
 
 section {
   box-sizing: border-box;

@@ -1,6 +1,15 @@
 header {
     background-color: $header-color;
     overflow: hidden;
+
+    img {
+        opacity: 0;
+        @include transition(opacity 1.5s ease-in-out);
+    }
+}
+
+.ready img {
+    opacity: 1;
 }
 
 section {
