@@ -1,0 +1,16 @@
+header img {
+    opacity: 0;
+    @include animation(intro 2s ease-in-out forwards);
+    @include animation-delay(1s);
+    @include animation-play-state(running);
+}
+
+@include keyframes(intro) {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

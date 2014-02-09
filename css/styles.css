@@ -90,6 +90,7 @@ h1 {
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
+  font-size: 0;
 }
 
 a {
@@ -99,6 +100,7 @@ a {
 header {
   width: 100%;
   height: 37.5%;
+  min-height: 125px;
 }
 header h1 {
   display: none;
@@ -111,31 +113,16 @@ header img {
 section {
   width: 50%;
   height: 62.5%;
-  float: left;
+  display: inline-block;
 }
-section:nth-of-type(2) :after {
-  content: "";
-  display: block;
-  clear: both;
-}
-@media screen and (max-width: 53em) {
+@media screen and (max-width: 47em) {
   section {
     width: 100%;
-    float: none;
+    min-height: 300px;
   }
 }
 section .centered {
-  width: 75%;
-}
-@media screen and (max-width: 64em) {
-  section .centered {
-    width: 60%;
-  }
-}
-@media screen and (max-width: 53em) {
-  section .centered {
-    width: 100%;
-  }
+  display: inline-block;
 }
 section:before {
   content: "";
@@ -149,18 +136,13 @@ section:before {
   -moz-transition: height 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: height 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-@media screen and (max-width: 53em) {
+@media screen and (max-width: 47em) {
   section:before {
-    height: 2.5%;
+    display: none;
   }
 }
 section:hover:before {
   height: 2.5%;
-}
-@media screen and (max-width: 53em) {
-  section :before {
-    display: none;
-  }
 }
 
 .centered {
@@ -177,31 +159,6 @@ section:hover:before {
 header {
   background-color: #f3f3f3;
   overflow: hidden;
-}
-header img {
-  opacity: 0;
-  -webkit-transition: opacity 1.5s ease-in-out;
-  -moz-transition: opacity 1.5s ease-in-out;
-  transition: opacity 1.5s ease-in-out;
-  -webkit-animation: intro 2s ease-in-out;
-  -moz-animation: intro 2s ease-in-out;
-  animation: intro 2s ease-in-out;
-  -webkit-animation-delay: 5s;
-  -moz-animation-delay: 5s;
-  animation-delay: 5s;
-  -webkit-animation-play-state: running;
-  -moz-animation-play-state: running;
-  animation-play-state: running;
-}
-
-@keyframes intro {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 section {
@@ -220,11 +177,6 @@ section h2 {
     font-size: 24px;
   }
 }
-@media screen and (max-width: 53em) {
-  section h2 {
-    text-align: center;
-  }
-}
 section p, section a, section p a {
   font-size: 21px;
   margin: 8px 0;
@@ -232,11 +184,6 @@ section p, section a, section p a {
 @media screen and (max-width: 64em) {
   section p, section a, section p a {
     font-size: 18px;
-  }
-}
-@media screen and (max-width: 53em) {
-  section p, section a, section p a {
-    text-align: center;
   }
 }
 section a {
@@ -252,7 +199,7 @@ section a:visited {
 section a:hover {
   color: #545050;
 }
-@media screen and (max-width: 53em) {
+@media screen and (max-width: 47em) {
   section a {
     color: #545050;
   }
@@ -260,9 +207,73 @@ section a:hover {
     color: #545050;
   }
 }
+@media screen and (max-width: 47em) {
+  section:nth-of-type(1) {
+    border-top: 10px solid #6faae1;
+  }
+}
 section:nth-of-type(2) {
   border-left: 1px solid #333030;
 }
+@media screen and (max-width: 47em) {
+  section:nth-of-type(2) {
+    border-left: none;
+    border-top: 1px solid #333030;
+  }
+}
 section:before {
   background-color: #6faae1;
+}
+
+header img {
+  opacity: 0;
+  -webkit-animation: intro 2s ease-in-out forwards;
+  -moz-animation: intro 2s ease-in-out forwards;
+  animation: intro 2s ease-in-out forwards;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  animation-play-state: running;
+}
+
+@-webkit-keyframes intro {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes intro {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes intro {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

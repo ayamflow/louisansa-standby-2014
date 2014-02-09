@@ -1,24 +1,6 @@
 header {
     background-color: $header-color;
     overflow: hidden;
-
-    img {
-        opacity: 0;
-        @include transition(opacity 1.5s ease-in-out);
-        @include animation(intro 2s ease-in-out);
-        @include animation-delay(5s);
-        @include animation-play-state(running);
-    }
-}
-
-@keyframes intro {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 
 section {
@@ -35,10 +17,6 @@ section {
         @include media($tablet-bp) {
             font-size: 24px;
         }
-
-        @include media($one-column-bp) {
-            text-align: center;
-        }
     }
 
     p, a, p a {
@@ -47,10 +25,6 @@ section {
 
         @include media($tablet-bp) {
             font-size: 18px;
-        }
-
-        @include media($one-column-bp) {
-            text-align: center;
         }
     }
 
@@ -74,8 +48,19 @@ section {
         }
     }
 
+    &:nth-of-type(1) {
+        @include media($one-column-bp) {
+            border-top: 10px solid $bar-color;
+        }
+    }
+
     &:nth-of-type(2) {
         border-left: 1px solid $separator-color;
+
+        @include media($one-column-bp) {
+            border-left: none;
+            border-top: 1px solid $separator-color;
+        }
     }
 
     &:before {
